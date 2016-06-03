@@ -1,15 +1,22 @@
-# -*- coding: utf-8 -*- #
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-from sys import version_info
-if version_info.major < 3:
-	print('Cumulus is not compatible under Python 2.')
-	exit()
+from __future__ import unicode_literals
 
-from distutils.core import setup
+import sys
+
+from setuptools import setup, find_packages
+
 setup(
-	name='pysami', version='0.1.5',
-	packages=['pysami'], package_dir={ 'pysami': 'src' },
-	author='유성매직', author_email='유성매직 <g6123@cys.wo.tc>',
-	description='Python library and script for converting SAMI file.',
-	url='https://github.com/g6123/pysami', license='MIT License',
-) 
+    name='samitizer',
+    version='0.1.6',
+    license='MIT',
+    author='Jamie Seol',
+    author_email='theeluwin@gmail.com',
+    url='https://github.com/theeluwin/samitizer',
+    description='Python library and script for converting SAMI file',
+    packages=find_packages(),
+    include_package_data=True,
+    install_requires=['setuptools'],
+    classifiers=[],
+)
