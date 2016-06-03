@@ -86,11 +86,13 @@ class Subtitle:
     def is_valid(self, lang):
         return lang in self.content and self.content[lang] != '&nbsp;'
 
-    def format_to(self, target):
+    def format_to(self, target, lang='ENCC'):
+        if lang not in self.content:
+            return self.summary()
         if target == 'vtt':
-            return "{} --> {}\n{}".format(_ms_to_stamp(self.start), _ms_to_stamp(self.end), self.representative)
+            return "{} --> {}\n{}".format(_ms_to_stamp(self.start), _ms_to_stamp(self.end), self.content[lang])
         elif target == 'plain':
-            return "{}".format(self.representative)
+            return "{}".format(self.content[lang])
         return self.summary()
 
     def summary(self):
@@ -159,13 +161,13 @@ class Smi:
             index = 1
             for subtitle in self.subtitles:
                 if subtitle.is_valid(lang):
-                    results.append("{}\n{}".format(index, subtitle.format_to(target)))
+                    results.append("{}\n{}".format(index, subtitle.format_to(target, lang)))
                     index += 1
             result = "\n\n".join(results)
         elif target == 'plain':
             for subtitle in self.subtitles:
                 if subtitle.is_valid(lang):
-                    results.append(subtitle.format_to(target))
+                    results.append(subtitle.format_to(target, lang))
             result = "\n".join(results)
         else:
             raise SamitizeError(-4)

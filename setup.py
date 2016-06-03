@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='samitizer',
-    version='0.1.6',
+    version='0.1.8',
     license='MIT',
     author='Jamie Seol',
     author_email='theeluwin@gmail.com',
