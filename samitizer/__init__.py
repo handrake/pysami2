@@ -140,6 +140,8 @@ class Smi:
                     file.close()
                 except:
                     raise SamitizeError(-2)
+        self.raw_text = self.raw_text.replace('\r\n', '\n')
+        self.raw_text = self.raw_text.replace('\n\r', '\n')
         initial = True
         for item in _tplit(self.raw_text, 'sync'):
             timecode = int(_lookup(item, '<sync start=([0-9]+)').group(1))
