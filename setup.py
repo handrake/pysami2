@@ -8,12 +8,12 @@ import sys
 from setuptools import setup, find_packages
 
 setup(
-    name='samitizer',
+    name='pysami2',
     version='0.1.8',
     license='MIT',
-    author='Jamie Seol',
-    author_email='theeluwin@gmail.com',
-    url='https://github.com/theeluwin/samitizer',
+    author='Byoung Gi Lee',
+    author_email='handrake@gmail.com',
+    url='https://github.com/handrake/pysami2',
     description='Python library and script for converting SAMI file',
     packages=find_packages(),
     include_package_data=True,

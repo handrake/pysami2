@@ -1,22 +1,19 @@
-Samitizer
+Pysami2
 ==========
 
-Python library for parsing SAMI file. Forked from [pysami][1] (thus license is preserved).
+Python library for parsing SAMI file. Forked from [samitizer][1] (thus license is preserved).
 
 
 Installation
 -----
 
 ```sh
-# to use auto charset detection, you should install uchardet
-sudo apt-get install uchardet
-
 # virtual environment like `virtualenv` is recommended
 virtualenv venv
 source venv/bin/activate
 
 # install
-pip install samitizer
+pip install pysami2
 ```
 
 Usage
@@ -39,4 +36,4 @@ Test
 python -m tests.test
 ```
 
-[1]: https://github.com/g6123/pysami "pysami"
+[1]: https://github.com/theeluwin/samitizer "samitizer"
