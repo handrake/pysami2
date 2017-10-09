@@ -130,7 +130,7 @@ class Smi:
             except:
                 raise SamitizeError(-2)
         else:
-            encoding_detected = chardet.detect(open(filepath, 'rb').readline())['encoding']
+            encoding_detected = chardet.detect(open(filepath, 'rb').read())['encoding']
             try:
                 file = codecs.open(filepath, encoding=encoding_detected)
                 self.raw_text = file.read()
