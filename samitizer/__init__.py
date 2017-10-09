@@ -90,7 +90,7 @@ class Subtitle:
     def format_to(self, target, lang='ENCC'):
         if lang not in self.content:
             return self.summary()
-        if target == 'vtt':
+        if target == 'vtt' or target == 'srt':
             return "{} --> {}\n{}".format(_ms_to_stamp(self.start), _ms_to_stamp(self.end), self.content[lang])
         elif target == 'plain':
             return "{}".format(self.content[lang])
@@ -156,8 +156,9 @@ class Smi:
 
     def convert(self, target, lang='ENCC'):
         results = []
-        if target == 'vtt':
-            results.append("WEBVTT")
+        if target == 'vtt' or target == 'srt':
+            if target == 'vtt':
+                results.append("WEBVTT")
             index = 1
             for subtitle in self.subtitles:
                 if subtitle.is_valid(lang):
