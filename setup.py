@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='pysami2',
-    version='0.1.8',
+    version='0.0.1',
     license='MIT',
     author='Byoung Gi Lee',
     author_email='handrake@gmail.com',
