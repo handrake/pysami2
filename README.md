@@ -21,7 +21,7 @@ Usage
 
 ```python
 from __future__ import print_function
-from samitizer import Smi
+from pysami2 import Smi
 
 smi = Smi('sample.smi')
 print(smi.subtitles[0].content['KRCC'])
