@@ -6,6 +6,7 @@ import os
 import re
 import codecs
 import subprocess
+import chardet
 
 
 def _ms_to_stamp(ms):
@@ -129,8 +130,7 @@ class Smi:
             except:
                 raise SamitizeError(-2)
         else:
-            detector = ['/usr/bin/env', 'uchardet', filepath]
-            encoding_detected = subprocess.check_output(detector).decode('utf-8').strip().lower()
+            encoding_detected = chardet.detect(open(filepath, 'rb').readline())['encoding']
             try:
                 file = codecs.open(filepath, encoding=encoding_detected)
                 self.raw_text = file.read()
