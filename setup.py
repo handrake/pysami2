@@ -17,6 +17,6 @@ setup(
     description='Python library and script for converting SAMI file',
     packages=find_packages(),
     include_package_data=True,
-    install_requires=['setuptools'],
+    install_requires=['setuptools', 'chardet'],
     classifiers=[],
 )
